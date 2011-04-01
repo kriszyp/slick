@@ -965,7 +965,7 @@ Slick.isXML = local.isXML;
 Slick.uidOf = function(node){
 	return local.getUIDHTML(node);
 };
-
+return Slick;
 });
 })(typeof define != "undefined" ? define: function(factory){
 	// Slick NS
