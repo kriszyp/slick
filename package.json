@@ -7,6 +7,7 @@
   "contributors"  : ["Fabio Miranda Costa", "Valerio Proietti", "Jan Kassens"],
   "dependencies"  : [],
   "lib"           : "Source",
-  "main"          : "./Source/slick.js",
-  "version"       : "1.0.0"
+  "main"          : "./Source/Slick.Finder.js",
+  "version"       : "1.0.0",
+  "icon"  : "http://packages.dojofoundation.org/images/moo.png"
 }
