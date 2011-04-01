@@ -6,7 +6,8 @@ provides: Slick.Parser
 ...
 */
 
-;(function(){
+;(function(define){
+define(["exports"], function(exports){
 
 var parsed,
 	separatorIndex,
@@ -215,16 +216,14 @@ function parser(
 	return '';
 };
 
-// Slick NS
-
-var Slick = (this.Slick || {});
-
-Slick.parse = function(expression){
+exports.parse = function(expression){
 	return parse(expression);
 };
 
-Slick.escapeRegExp = escapeRegExp;
+exports.escapeRegExp = escapeRegExp;
 
-if (!this.Slick) this.Slick = Slick;
-
-}).apply(/*<CommonJS>*/(typeof exports != 'undefined') ? exports : /*</CommonJS>*/this);
+});
+})(typeof define != "undefined" ? define: function(factory){
+	// Slick NS
+	factory(this.Slick || (this.Slick = {}));
+});

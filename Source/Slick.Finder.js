@@ -7,7 +7,8 @@ requires: Slick.Parser
 ...
 */
 
-;(function(){
+;(function(define){
+define(["./Slick.Parser"], function(Slick){
 
 var local = {},
 	featuresCache = {},
@@ -888,7 +889,7 @@ local.attributeGetters = {
 
 // Slick
 
-var Slick = local.Slick = (this.Slick || {});
+local.Slick = Slick;
 
 Slick.version = '1.1.5';
 
@@ -965,6 +966,9 @@ Slick.uidOf = function(node){
 	return local.getUIDHTML(node);
 };
 
-if (!this.Slick) this.Slick = Slick;
+});
+})(typeof define != "undefined" ? define: function(factory){
+	// Slick NS
+	factory(this.Slick || (this.Slick = {}));
+});
 
-}).apply(/*<CommonJS>*/(typeof exports != 'undefined') ? exports : /*</CommonJS>*/this);
